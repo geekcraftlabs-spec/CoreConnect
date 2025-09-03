@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Connect - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #f8f9fa, #ffffff);
+            margin: 0;
+        }
+        header {
+            background-color: #e9ecef;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .company-name {
+            font-family: 'Bubblegum Sans', sans-serif;
+            font-size: 3.5rem;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 10px 0;
+        }
+        .navbar {
+            background-color: #000000;
+            padding: 10px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #a9a9a9;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #333333;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .trust-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+        }
+        .trust-item {
+            max-width: 300px;
+            text-align: center;
+        }
+        .trust-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .trust-item p {
+            font-size: 1rem;
+            color: #555555;
+        }
+        .cta-button {
+            text-align: center;
+            padding: 20px;
+        }
+        .cta-button a {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button a:hover {
+            background-color: #333333;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #a9a9a9;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+        /* Mobile responsiveness */
+        @media (max-width: 576px) {
+            .company-name {
+                font-size: 2rem;
+            }
+            .navbar-nav .nav-link {
+                font-size: 0.9rem;
+                margin: 5px 10px;
+            }
+            header {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Company name in place of logo -->
+        <h1 class="company-name">CoreConnect</h1>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="why-choose-us.html">Why Choose Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="devices.html">Devices</a></li>
+                <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Your One-Stop Shop for All Things Apple</h1>
+            <p>Welcome to Core Connect, your trusted online store for premium reloved and new Apple products, from the latest iPhones to powerful MacBooks. With our motto, <strong>Stay Core, Stay Connected</strong>, we prioritize quality, trust, and convenience for every customer.</p>
+        </section>
+
+        <section class="trust-section">
+            <div class="trust-item">
+                <h3>Cash on Delivery</h3>
+                <p>Shop with confidence using our strict Cash on Delivery option, ensuring trust and transparency for every purchase.</p>
+            </div>
+            <div class="trust-item">
+                <h3>Collection Sites</h3>
+                <p>Conveniently pick up your order at our Gauteng collection sites, designed to make your shopping experience seamless.</p>
+            </div>
+            <div class="trust-item">
+                <h3>Transparent Delivery</h3>
+                <p>For customers outside Gauteng, we offer efficient and transparent delivery options to get your Apple products to you quickly.</p>
+            </div>
+            <div class="trust-item">
+                <h3>Premium Quality</h3>
+                <p>Every product we sell is authentic and premium, ensuring you get the best Apple experience every time.</p>
+            </div>
+        </section>
+
+        <div class="cta-button">
+            <a href="devices.html">View Our Catalogue</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>About Core Connect: Established to bring premium Apple products to South Africans, we’re committed to trust, quality, and connection. Stay Core, Stay Connected!</p>
+        <p><a href="https://wa.me/27750286134" target="_blank">WhatsApp</a> | <a href="https://www.instagram.com/anotheronedown__/" target="_blank">Instagram</a> | <a href="https://www.tiktok.com/@coreconnect__?is_from_webapp=1&sender_device=pc" target="_blank">Tiktok</a> | <a href="https://x.com/coreconnect__" target="_blank">X</a> | <a href="tel:+27682852438" target="_blank">Phone</a></p>
+        <p>&copy; 2024 Core Connect. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS (for responsiveness) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
