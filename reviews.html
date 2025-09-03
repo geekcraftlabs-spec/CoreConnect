@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Connect - Reviews</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #f8f9fa, #ffffff);
+            margin: 0;
+        }
+        header {
+            background-color: #e9ecef;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .navbar {
+            background-color: #000000;
+            padding: 10px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #a9a9a9;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        .reviews-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .review-item {
+            max-width: 350px;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .review-item:hover {
+            transform: translateY(-5px);
+        }
+        .review-item p {
+            font-size: 1rem;
+            color: #555555;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .review-item .author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .review-item .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .leave-review {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .leave-review h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        .review-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .review-form label {
+            font-size: 1rem;
+            color: #1a1a1a;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .review-form input[type="text"],
+        .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        .review-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .review-form .star-rating {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .review-form .star-rating input {
+            display: none;
+        }
+        .review-form .star-rating label {
+            font-size: 1.5rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .review-form .star-rating input:checked ~ label,
+        .review-form .star-rating label:hover,
+        .review-form .star-rating label:hover ~ label {
+            color: #ffd700;
+        }
+        .review-form button {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .review-form button:hover {
+            background-color: #333333;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #a9a9a9;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+        /* Mobile responsiveness */
+        @media (max-width: 576px) {
+            .navbar-nav .nav-link {
+                font-size: 0.9rem;
+                margin: 5px 10px;
+            }
+            header {
+                padding: 10px 0;
+            }
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .leave-review h2 {
+                font-size: 1.5rem;
+            }
+            .review-form input[type="text"],
+            .review-form textarea {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+            .review-form .star-rating label {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="why-choose-us.html">Why Choose Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="devices.html">Devices</a></li>
+                <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>What Our Customers Say</h1>
+        </section>
+
+        <section class="reviews-section">
+            <div class="review-item">
+                <div class="stars">★★★★★</div>
+                <p>"Absolutely thrilled with my iPhone 15! The COD option made me feel secure, and the delivery to Pretoria was swift and transparent. Top-notch service from Core Connect."</p>
+                <span class="author">Thabo Nkosi</span>
+            </div>
+            <div class="review-item">
+                <div class="stars">★★★★★</div>
+                <p>"Bought a MacBook Pro, and it's premium quality as promised. Picked it up in Johannesburg – no hassle at all. Stay Core, Stay Connected indeed!"</p>
+                <span class="author">Pieter van der Merwe</span>
+            </div>
+            <div class="review-item">
+                <div class="stars">★★★★☆</div>
+                <p>"Great experience with my iPad purchase. The team ensured everything was smooth, even with delivery outside Gauteng. Highly recommend."</p>
+                <span class="author">Lerato Mokoena</span>
+            </div>
+            <div class="review-item">
+                <div class="stars">★★★★★</div>
+                <p>"Loving my new AirPods! COD was a game-changer – no worries about scams. Delivered right to my door in Joburg."</p>
+                <span class="author">Bra Mike</span>
+            </div>
+            <div class="review-item">
+                <div class="stars">★★★★★</div>
+                <p>"Core Connect delivered my iPhone 14 faster than expected. The quality is unmatched, and their customer service is excellent."</p>
+                <span class="author">Johan Botha</span>
+            </div>
+            <div class="review-item">
+                <div class="stars">★★★★★</div>
+                <p>"Super happy with the iPhone X I got. Efficient collection in Gauteng, and everything was as described. Will shop again!"</p>
+                <span class="author">Thandi</span>
+            </div>
+            <div class="review-item">
+                <div class="stars">★★★★☆</div>
+                <p>"Impressed by the transparent delivery process to my home in Pretoria. The MacBook is perfect – thanks, Core Connect!"</p>
+                <span class="author">Nadia Patel</span>
+            </div>
+        </section>
+
+        <section class="leave-review">
+            <h2>Share Your Experience</h2>
+            <form class="review-form" action="https://formspree.io/f/xvgbvgwb" method="POST" target="_blank">
+                <label for="name">Your Name (Optional)</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name or nickname">
+                
+                <label>Star Rating</label>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" required>
+                    <label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">★</label>
+                </div>
+                
+                <label for="review">Your Review</label>
+                <textarea id="review" name="review" placeholder="Write your review here (max 500 characters)" maxlength="500" required></textarea>
+                
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+         <p>About Core Connect: Established to bring premium Apple products to South Africans, we’re committed to trust, quality, and connection. Stay Core, Stay Connected!</p>
+        <p><a href="https://wa.me/27750286134" target="_blank">WhatsApp</a> | <a href="https://www.instagram.com/anotheronedown__/" target="_blank">Instagram</a> | <a href="https://www.tiktok.com/@coreconnect__?is_from_webapp=1&sender_device=pc" target="_blank">Tiktok</a> | <a href="https://x.com/coreconnect__" target="_blank">X</a> | <a href="tel:+27682852438" target="_blank">Phone</a></p>
+        <p>&copy; 2024 Core Connect. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS (for responsiveness) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
